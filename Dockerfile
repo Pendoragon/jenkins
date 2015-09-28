@@ -1,7 +1,7 @@
 FROM jenkins
 MAINTAINER Pengcheng Tang <tupachydralisk@gmail.com>
 
-COPY config.xml /var/jenkins_home/
+RUN apt-get update && apt-get install golang rsync build-essential
 
 # Run the following commands as "root" so that we will be able
 # to add "jenkins" to docker group
