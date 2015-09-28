@@ -1,9 +1,9 @@
 disk-usage:0.25
 notification:1.9
-mailer
-ssh-credentials
-git-client
-scm-api
 matrix-project
-git
-
+mailer
+ssh-credentials:1.11
+credentials:1.23
+scm-api
+git-client:1.19.0
+git:2.4.0

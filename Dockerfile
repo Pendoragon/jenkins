@@ -1,11 +1,15 @@
 FROM jenkins
 MAINTAINER Pengcheng Tang <tupachydralisk@gmail.com>
 
-RUN apt-get update && apt-get install golang rsync build-essential
-
 # Run the following commands as "root" so that we will be able
 # to add "jenkins" to docker group
 USER root
+
+RUN apt-get update && apt-get install -y \
+    lxc \
+    golang \
+    rsync \
+    build-essential
 
 # Set up the plugins we need
 COPY active.txt /usr/share/jenkins/active.txt
