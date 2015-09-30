@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     lxc \
     golang \
     rsync \
+    npm \
     build-essential
 
 # Set up the plugins we need
