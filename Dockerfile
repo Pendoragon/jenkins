@@ -22,4 +22,7 @@ ENV JENKINS_OPTS="--handlerCountStartup=100 --handlerCountMax=300 --logfile=/var
 
 # Set up the env and run jenkins as user "jenkins"
 COPY setup-n-run.sh /
-ENTRYPOINT ["/setup-n-run.sh"]
+
+# Have to use /bin/tini to run the script, otherwise jenkins
+# will crash on setting up git repos. Reason is still unknown.
+ENTRYPOINT ["/bin/tini", "--", "/setup-n-run.sh"]
