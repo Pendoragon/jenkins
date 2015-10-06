@@ -11,12 +11,23 @@ USER root
 
 RUN mkdir /var/log/jenkins
 
+###############################################################################
+#            install binaries we need to build our components                 #
+###############################################################################
 RUN apt-get update && apt-get install -y \
     lxc \
     golang \
     rsync \
     npm \
-    build-essential
+    expect \
+    build-essential \
+    ruby-full && \
+    gem install compass && \
+    npm install --global gulp && npm install --global bower && npm cache clean
+
+# On ubuntu nodejs is by default in /usr/bin/nodejs
+RUN ln -s "$(which nodejs)" /usr/bin/node
+###############################################################################
 
 ENV JENKINS_OPTS="--handlerCountStartup=100 --handlerCountMax=300 --logfile=/var/log/jenkins/jenkins.log"
 
