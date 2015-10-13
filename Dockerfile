@@ -21,9 +21,12 @@ RUN apt-get update && apt-get install -y \
     npm \
     expect \
     build-essential \
+    net-tools \
+    python-pip \
     ruby-full && \
     gem install compass && \
-    npm install --global gulp && npm install --global bower && npm cache clean
+    npm install --global gulp && npm install --global bower && npm cache clean && \
+    pip install pytz
 
 # On ubuntu nodejs is by default in /usr/bin/nodejs
 RUN ln -s "$(which nodejs)" /usr/bin/node
