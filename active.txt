@@ -17,3 +17,7 @@ github:1.14.0
 workflow-step-api:1.10
 ssh-agent:1.8
 ghprb:1.29
+
+# build-timeout plugins
+token-macro:1.10
+build-timeout:1.15
