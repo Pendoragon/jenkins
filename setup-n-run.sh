@@ -19,4 +19,4 @@ fi
 chown -R $JUSER:$JUSER /var/jenkins_home/
 chown -R $JUSER:$JUSER /var/log/jenkins/
 
-exec su $JUSER -c "/bin/tini -- /usr/local/bin/jenkins.sh"
+exec su $JUSER -c "/usr/local/bin/jenkins.sh"
