@@ -30,6 +30,8 @@ RUN apt-get update && apt-get install -y \
 
 # On ubuntu nodejs is by default in /usr/bin/nodejs
 RUN ln -s "$(which nodejs)" /usr/bin/node
+
+COPY bin/qrsync /usr/local/bin/
 ###############################################################################
 
 ENV JENKINS_OPTS="--handlerCountStartup=100 --handlerCountMax=300 --logfile=/var/log/jenkins/jenkins.log"
