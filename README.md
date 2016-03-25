@@ -22,7 +22,7 @@ http://\<jenkins-server-url\>:\<jenkins-server-port\>/ghprbhook/
 
 6. On job configuration page fill in the following:
    - GitHub project (e.g. https://github.com/Pendoragon/jenkins)
-   - SCM: Repo URL, Credential, Name, Refspec(+ref/pull/\*:refs/remotes/origin/pr/\*), Branch Specifier(${sha1})
+   - SCM: Repo URL, Credential, Name, Refspec(+refs/pull/\*:refs/remotes/origin/pr/\*), Branch Specifier(${sha1})
    - Build Triggers: Use github hooks for build triggering, Only use trigger phrase for build triggering.
 *Note: Be careful about admin list. If you ever set one admin, then only that guy has the permission to trigger builds.*
 
