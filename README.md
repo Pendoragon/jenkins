@@ -28,4 +28,6 @@ http://\<jenkins-server-url\>:\<jenkins-server-port\>/ghprbhook/
 
 7. Set the rest.
 
+# Pitfalls on Jenkins ssh slaves
+If you are using ssh to launch jenkins slaves, then there's one thing you need to pay attention. `~/.bashrc` will just return at the very beginning if it is a non-interactive shell. So if you are trying to source it to have some environment variables set, you will have to place them at the VERY BEGINNING or else it would not get set.
 
